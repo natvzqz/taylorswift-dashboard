@@ -45,7 +45,7 @@ with dataset:
         - Properties: Loudness, Speechiness
         - Context: Liveness, Acousticness, Genre.""")
 
-    df = pd.read_csv('./data/MasterTaylorSwiftSongs.csv')
+    df = pd.read_csv('./MasterTaylorSwiftSongs.csv')
     df.drop(df[df.lyrics.isnull()].index, inplace = True)
     df = df.drop(columns=['sel','main_discography'])
 
