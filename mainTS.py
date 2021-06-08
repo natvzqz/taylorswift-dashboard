@@ -409,7 +409,7 @@ with conclusion:
     st.write("[Escucha en cualquier plataforma](https://swifting.captivate.fm/listen)")
 
 with redesSociales:
-    st.markdown("""Si te gusto este dasboard y gustas apoyarme, no dudes en regalarme un café.""")
+    st.markdown("""Si te gusto este dashboard y gustas apoyarme, no dudes en regalarme un café.""")
     components.html('<center><script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="nataliavazquez" data-color="#BD5FFF" data-emoji=""  data-font="Cookie" data-text="Buy me a coffee" data-outline-color="#000000" data-font-color="#ffffff" data-coffee-color="#FFDD00" ></script>')
 
     st.markdown(""" Tienes dudas, comentarios o buscas más contenido?? Contáctame [@nataliavazquez](https://linktr.ee/nataliavazquez)""" )
