@@ -118,7 +118,7 @@ with basicstats:
 
 with audiofeatures:
     st.header('Deep look')
-    st.markdown ("""Realizaremos un analisis más profundo
+    st.markdown ("""Realizaremos un análisis más profundo
     sobre las características de audio extraidas de Spotify""")
     
     
