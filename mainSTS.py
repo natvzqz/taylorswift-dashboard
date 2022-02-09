@@ -44,7 +44,7 @@ with dataset:
         - Properties: Loudness, Speechiness
         - Context: Liveness, Acousticness, Genre.""")
 
-    df = pd.read_excel('./MasterTaylorSwiftSongs.xlsx')
+    df = pd.read_excel('MasterTaylorSwiftSongs.xlsx')
     df_copy= df.copy(deep=True)
     df.drop(df[df.lyrics.isnull()].index, inplace = True)
     df = df.drop(columns=['sel','main_discography'])
