@@ -102,10 +102,10 @@ with basicstats:
                     return 'https://i.ibb.co/1d23NqV/folklore.jpg'
                 elif widget_selection == 'evermore':
                     return 'https://i.ibb.co/FYcV2Cm/evermore.jpg'
-                elif widget_selection == 'Fearless (Taylor’s Version)':
-                    return 'https://i.ibb.co/vxDsQvm/Fearless.jpg'
+                elif widget_selection == 'Fearless (Taylor´s Version)':
+                    return 'https://i.ibb.co/pnh8hn8/Fearless-TV.jpg'
                 else:
-                    return 'https://i.ibb.co/4FtpWM0/Red-TV.jpg'
+                    return 'https://i.ibb.co/rfBD43b/Red-TV.jpg'
             
             imagen = set_image(widget_album) 
             st.image(imagen, width=300,use_column_width= 'auto')
