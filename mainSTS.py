@@ -46,6 +46,7 @@ with dataset:
 
     df = pd.read_excel('MasterTaylorSwiftSongs.xlsx')
     df_copy= df.copy(deep=True)
+    albums_ts = df['album'].unique().tolist()
     df.drop(df[df.lyrics.isnull()].index, inplace = True)
     df = df.drop(columns=['sel','main_discography'])
 
@@ -57,7 +58,7 @@ with basicstats:
 
     sel_col, disp_col = st.columns(2)  
 
-    widget_album = sel_col.selectbox('Elige un álbum',options=['Taylor Swift','Fearless','Speak Now','Red','1989','reputation','Lover','folklore','evermore','Fearless (Taylor´s Version)','Red (Taylor´s Version)'],index = 0)
+    widget_album = sel_col.selectbox('Elige un álbum',options=albums_ts,index = 0)
     df_album = df[df['album'] == widget_album]
     canciones_album = df_album['title'].unique().tolist()
     canciones_album.append('Todas')
@@ -151,7 +152,7 @@ with audiofeatures:
     col5, col6, col7=st.columns(3)
 
     with col5:
-        widget_album5 = st.selectbox('álbum 1: ',options=['Taylor Swift','Fearless','Speak Now','Red','1989','reputation','Lover','folklore','evermore','Fearless (Taylor´s Version)','Red (Taylor´s Version)'],index = 0)
+        widget_album5 = st.selectbox('álbum 1: ',options=albums_ts,index = 0)
         df_album5 = df[df['album'] == widget_album5]
         canciones_album5 = df_album5['title'].unique().tolist()
         canciones_album5.append('Todas')
@@ -170,7 +171,7 @@ with audiofeatures:
 
 
     with col6:
-        widget_album6 = st.selectbox('álbum 2: ',options=['Taylor Swift','Fearless','Speak Now','Red','1989','reputation','Lover','folklore','evermore','Fearless (Taylor´s Version)','Red (Taylor´s Version)'],index = 0)
+        widget_album6 = st.selectbox('álbum 2: ',options=albums_ts,index = 0)
         df_album6 = df[df['album'] == widget_album6]
         canciones_album6 = df_album6['title'].unique().tolist()
         canciones_album6.append('Todas')
@@ -189,7 +190,7 @@ with audiofeatures:
       
 
     with col7:
-        widget_album7 = st.selectbox('álbum 3: ',options=['Taylor Swift','Fearless','Speak Now','Red','1989','reputation','Lover','folklore','evermore','Fearless (Taylor´s Version)','Red (Taylor´s Version)'],index = 0)
+        widget_album7 = st.selectbox('álbum 3: ',options=albums_ts,index = 0)
         df_album7 = df[df['album'] == widget_album7]
         canciones_album7 = df_album7['title'].unique().tolist()
         canciones_album7.append('Todas')
@@ -254,7 +255,7 @@ with sentAnalisis:
     col10, col11 =st.columns(2)
 
     with col10:
-        widget_album10 = st.selectbox('Escoge un álbum: ',options=['Taylor Swift','Fearless','Speak Now','Red','1989','reputation','Lover','folklore','evermore','Fearless (Taylor´s Version)','Red (Taylor´s Version)'],index = 0)
+        widget_album10 = st.selectbox('Escoge un álbum: ',options=albums_ts,index = 0)
         df_album10 = df[df['album'] == widget_album10]
 
         data_album = df_album10['lyrics'].tolist()
@@ -411,7 +412,7 @@ with conclusion:
    
     st.subheader('Revisa si tu canción fav ya fue analizada por swifting podcast.')
     
-    widget_podcast = st.selectbox('álbum fav: ',options=['Taylor Swift','Fearless','Speak Now','Red','1989','reputation','Lover','folklore','evermore','Fearless (Taylor´s Version)','Red (Taylor´s Version)'],index = 8)
+    widget_podcast = st.selectbox('álbum fav: ',options=albums_ts,index = 8)
     df_podcast = df[df['album'] == widget_podcast]
     canciones_podcast= df_podcast['title'].unique().tolist()
     widget_cancion_podcast = st.selectbox('canción fav: ',options=canciones_podcast)
