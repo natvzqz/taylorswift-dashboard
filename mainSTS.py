@@ -430,4 +430,3 @@ with conclusion:
 
 with redesSociales:
     st.markdown(""" Tienes dudas, comentarios o buscas más contenido?? Contáctame [@nataliavazquez](https://linktr.ee/nataliavazquez)""" )
-
