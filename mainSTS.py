@@ -380,6 +380,8 @@ with Reverse_Search:
     df_busqueda_0 = df_copy[['lyrics','title','main_discography']]
     df_busqueda= df_busqueda_0[df_busqueda_0['main_discography'] == 1]
     busqueda_inv = st.text_input("¿Qué palabra quieres buscar?: ", value="blue")
+    espacios = len(busqueda_inv)+2
+    busqueda_inv = busqueda_inv.center(espacios)
     df_busqueda_2 = df_busqueda[df_busqueda.apply(lambda row: row.astype(str).str.contains(busqueda_inv).any(), axis=1)]['title'].to_list()
     if len(df_busqueda_2) == 0:
         st.markdown('Sorry, no se encontraron resultados, pero no te preocupes puedes intentar con palabras como *golden* , *love*, *happy*, *blue*.')
