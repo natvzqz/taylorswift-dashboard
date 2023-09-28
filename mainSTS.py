@@ -1,4 +1,4 @@
-from altair.vegalite.v4.schema.channels import Key
+#from altair.vegalite.v4.schema.channels import Key
 import streamlit as st
 from numpy.lib.function_base import disp
 import pandas as pd
