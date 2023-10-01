@@ -129,7 +129,7 @@ with audiofeatures:
         
         st.write('Álbum: ',widget_album)
 
-        df_albumcor = df_album.drop(columns=['track_n','year'])
+        df_albumcor = df_album.drop(columns=['track_n','year','title','artist','album','genre','main_discography','lyrics','pop','Pocast','URL'])
 
         fig, ax = plt.subplots()
         sns.heatmap(df_albumcor .corr(), ax=ax)
