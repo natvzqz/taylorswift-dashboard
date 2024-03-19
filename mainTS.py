@@ -262,6 +262,7 @@ with st.container():
 
         from nltk.probability import FreqDist
         fdist_album = FreqDist(df_3_album)
+        fdist_album = fdist_album_dict = dict(fdist_album)
 
         st.write('Palabras únicas: ',len(vocabulario_album))
         st.write('Complejidad del álbum: ',round(rl_album,3))
