@@ -317,14 +317,14 @@ with st.container():
 
         st.write('las',num_palabras_cancion,'palabras más repetidas y sus frecuencias')
 
-       # fig4, ax4 = plt.subplots()
-       # fdist_cancion.most_common(num_palabras_cancion)
-        #fw_data_cancion = pd.DataFrame(fdist_cancion.items(), columns=['word', 'frequency']).reset_index().sort_values(by='frequency', ascending=False)
-        #w_plot_cancion = fw_data_cancion.head(num_palabras_cancion)
-        #ax4.bar(w_plot_cancion['word'],w_plot_cancion['frequency'])
-        #plt.xticks(rotation=90)
-        #plt.show()
-        #st.pyplot(fig4)
+        fig4, ax4 = plt.subplots()
+        fdist_cancion.most_common(num_palabras_cancion)
+        fw_data_cancion = pd.DataFrame(fdist_cancion.items(), columns=['word', 'frequency']).reset_index().sort_values(by='frequency', ascending=False)
+        w_plot_cancion = fw_data_cancion.head(num_palabras_cancion)
+        ax4.bar(w_plot_cancion['word'],w_plot_cancion['frequency'])
+        plt.xticks(rotation=90)
+        plt.show()
+        st.pyplot(fig4)
 
         #fig2, ax = plt.subplots()
         #wordcloud_cancion = WordCloud(background_color='white', collocations=False, max_words=30).fit_words(fdist_cancion)
