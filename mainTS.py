@@ -116,7 +116,8 @@ with st.container():
         
         st.write('Álbum: ',widget_album)
 
-        df_albumcor = df_albumcor = df_album.drop(columns=['track_n','year'])
+        columns_to_drop = ['title', 'artist', 'album', 'genre', 'lyrics', 'Podcast', 'URL']
+        df_albumcor = df_album.drop(columns=columns_to_drop + ['track_n', 'year'])
 
         fig, ax = plt.subplots()
         sns.heatmap(df_albumcor.corr(), ax=ax)
