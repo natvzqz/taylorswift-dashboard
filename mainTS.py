@@ -49,7 +49,7 @@ with st.container():
 
     sel_col, disp_col = st.columns(2)  
 
-    widget_album = sel_col.selectbox('Elige un álbum',options=['Taylor Swift','Fearless','Speak Now','Red','1989','reputation','Lover','folklore','evermore'],index = 0)
+    widget_album = sel_col.selectbox('Elige un álbum',options=['Taylor Swift','Fearless','Speak Now','Red','1989','reputation','Lover','folklore','evermore'],index = 1)
     df_album = df[df['album'] == widget_album]
     canciones_album = df_album['title'].unique().tolist()
     canciones_album.append('Todas')
