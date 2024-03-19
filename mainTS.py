@@ -280,12 +280,12 @@ with st.container():
         plt.show()
         st.pyplot(fig3)
         
-        fig1, ax = plt.subplots()
-        wordcloud_album = WordCloud(background_color='white', collocations=False, max_words=30).fit_words(fdist_album_dict)
-        plt.imshow(wordcloud_album, interpolation='bilinear')
-        plt.axis('off')
-        plt.show()
-        st.pyplot(fig1)
+        #fig1, ax = plt.subplots()
+        #wordcloud_album = WordCloud(background_color='white', collocations=False, max_words=30).fit_words(fdist_album_dict)
+        #plt.imshow(wordcloud_album, interpolation='bilinear')
+        #plt.axis('off')
+        #plt.show()
+        #st.pyplot(fig1)
         
     with col11:
         canciones_album10 = df_album10['title'].unique().tolist()
