@@ -12,13 +12,13 @@ from wordcloud import WordCloud
 #from streamlit_player import st_player
 import streamlit.components.v1 as components
 
-header = st.beta_container()
-dataset = st.beta_container()
-basicstats = st.beta_container()
-audiofeatures = st.beta_container()
-sentAnalisis = st.beta_container()
-conclusion = st.beta_container()
-redesSociales = st.beta_container()
+header = st.container()
+dataset = st.container()
+basicstats = st.container()
+audiofeatures = st.container()
+sentAnalisis = st.container()
+conclusion = st.container()
+redesSociales = st.container()
 
 
 with header:
@@ -58,7 +58,7 @@ with basicstats:
     st.header('Quick Look')
     st.markdown ('Realizaremos un análisis rápido al álbum y/o canción que elijas')
 
-    sel_col, disp_col = st.beta_columns(2)  
+    sel_col, disp_col = st.columns(2)  
 
     widget_album = sel_col.selectbox('Elige un álbum',options=['Taylor Swift','Fearless','Speak Now','Red','1989','reputation','Lover','folklore','evermore'],index = 0)
     df_album = df[df['album'] == widget_album]
@@ -66,7 +66,7 @@ with basicstats:
     canciones_album.append('Todas')
     widget_cancion = disp_col.selectbox('Elige una rola',options=canciones_album,index = (len(canciones_album)-1))
 
-    col1, col2 = st.beta_columns(2)
+    col1, col2 = st.columns(2)
 
     with col1:
         st.write('Álbum: ',widget_album)
@@ -110,7 +110,7 @@ with basicstats:
             st.markdown("""
              > disclaimer: este botón de rola, aún no sirve para nada, pero próximamente funcionara""")
 
-    with st.beta_expander("Ver explicación:"):
+    with st.expander("Ver explicación:"):
         st.markdown("""
         Todos lo anterior esta expresado en promedios""")
         st.markdown("""
@@ -122,7 +122,7 @@ with audiofeatures:
     sobre las características de audio extraidas de Spotify""")
     
     
-    col3, col4 = st.beta_columns(2)
+    col3, col4 = st.columns(2)
 
     with col3:
         
@@ -147,7 +147,7 @@ with audiofeatures:
     st.subheader('Comparemos las características de 3 canciones: ')
     
     
-    col5, col6, col7=st.beta_columns(3)
+    col5, col6, col7=st.columns(3)
 
     with col5:
         widget_album5 = st.selectbox('álbum 1: ',options=['Taylor Swift','Fearless','Speak Now','Red','1989','reputation','Lover','folklore','evermore'],index = 0)
@@ -210,7 +210,7 @@ with sentAnalisis:
     st.markdown ("""Como bien lo dijo Taylor en su documental *Miss Americana*, cada artista tiene su nicho propio, 
     y si no fuera por su **story telling** y **lyrics**, ella seria una mas del montón.""")
 
-    col8, col9 =st.beta_columns(2)
+    col8, col9 =st.columns(2)
 
     with col8:
     
@@ -250,7 +250,7 @@ with sentAnalisis:
               | [][.,;"'?():-_`]    # Hace match con signos de puntuación
     '''
 
-    col10, col11 =st.beta_columns(2)
+    col10, col11 =st.columns(2)
 
     with col10:
         widget_album10 = st.selectbox('Escoge un álbum: ',options=['Taylor Swift','Fearless','Speak Now','Red','1989','reputation','Lover','folklore','evermore'],index = 0)
@@ -343,7 +343,7 @@ with sentAnalisis:
         plt.show()
         st.pyplot(fig2)
         
-    with st.beta_expander("Cómo interpretar esto?:"):
+    with st.expander("Cómo interpretar esto?:"):
             st.markdown("""
             - Palabras únicas: es el total de palabras que no se repiten""")
             st.markdown("""
