@@ -9,20 +9,9 @@ from nltk.corpus import stopwords
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.feature_extraction.text import TfidfVectorizer
 from wordcloud import WordCloud
-#from streamlit_player import st_player
 import streamlit.components.v1 as components
 
-header = st.container()
-dataset = st.container()
-basicstats = st.container()
-audiofeatures = st.container()
-sentAnalisis = st.container()
-conclusion = st.container()
-redesSociales = st.container()
-
-
-with header:
-
+with st.container():
     header_image = 'https://i.ibb.co/GM1JYrM/header.jpg'
     st.image(header_image, width=800,use_column_width= 'auto')
 
@@ -37,7 +26,7 @@ with header:
      café para las desveladas se los agradecería mucho.""")
     components.html('<center><script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="nataliavazquez" data-color="#FFDD00" data-emoji=""  data-font="Cookie" data-text="Buy me a coffee" data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#ffffff" ></script>')
 
-with dataset:
+with st.container():
     st.header('Teardrops on my dataframe')
     st.markdown(""" Les platico un poco sobre este **dataframe**""")
     st.markdown("""
@@ -54,7 +43,7 @@ with dataset:
 
     st.write(df.head(14))
 
-with basicstats:
+with st.container():
     st.header('Quick Look')
     st.markdown ('Realizaremos un análisis rápido al álbum y/o canción que elijas')
 
@@ -83,7 +72,6 @@ with basicstats:
         st.write('Speechiness: ',round(df_album['spch'].mean(),2))
 
     with col2:
-           
            
             def set_image(widget_selection):
                 if widget_selection == 'Taylor Swift':
@@ -116,7 +104,7 @@ with basicstats:
         st.markdown("""
         Entre más grande sea el valor más describe esa característica al álbum """)
 
-with audiofeatures:
+with st.container():
     st.header('Deep look')
     st.markdown ("""Realizaremos un análisis más profundo
     sobre las características de audio extraidas de Spotify""")
@@ -205,7 +193,7 @@ with audiofeatures:
         st.write('Acousticness: ',round(df_cancion7['acous'].mean(),2))
         st.write('Speechiness: ',round(df_cancion7['spch'].mean(),2))
 
-with sentAnalisis:
+with st.container():
     st.header('Análisis de la Lyrica')
     st.markdown ("""Como bien lo dijo Taylor en su documental *Miss Americana*, cada artista tiene su nicho propio, 
     y si no fuera por su **story telling** y **lyrics**, ella seria una mas del montón.""")
@@ -372,7 +360,7 @@ with sentAnalisis:
     ax7.set_ylim(ax7.get_ylim()[::-1])
     st.pyplot(fig7)
 
-with conclusion:
+with st.container():
     st.header('¿Qué aprendimos?')
     st.markdown ("""Espero que después de jugar con este dashboard hayas podido encontrar revelaciones interesantes sobre la música de Taylor,
     también se, que como los grandes swifties que somos, muchas otras cosas no nos hicieron sentido... i mean como es que ***All too well*** y ***...Redy for it?***
@@ -408,7 +396,7 @@ with conclusion:
     st.markdown("""Si tu canción favorita no ha sido analizada, no te preocupes puedes empezar por las primeras temporadas o escuchando los episodios bonus.""")
     st.write("[Escucha en cualquier plataforma](https://swifting.captivate.fm/listen)")
 
-with redesSociales:
+with st.container():
     st.markdown("""Si te gusto este dashboard y gustas apoyarme, no dudes en regalarme un café.""")
     components.html('<center><script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="nataliavazquez" data-color="#BD5FFF" data-emoji=""  data-font="Cookie" data-text="Buy me a coffee" data-outline-color="#000000" data-font-color="#ffffff" data-coffee-color="#FFDD00" ></script>')
 
